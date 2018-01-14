@@ -1,36 +1,4 @@
-# myPromise
 
-### 动手实现一个简单的 promise（一）
-
-1. 背景：工作中经常会遇到多个异步请求存在依赖的情况，比如下面很常见的例子：
- 
-```
-function getUserId() {
-  return new Promise(function(resolve) {
-    //异步请求
-    http.get(url, function(results) {
-      resolve(results.id);
-    });
-  });
-}
-getUserId().then(function(id) {
-  //一些处理
-});
-```
-
-2. ES6中的Promise
-
-
-可以看到 实例上有all、race、reject、resolve这方法，原型上有then、catch、finally等等方法。
-
-3. 实现简单的Promise
-   思路：
-   ① then: 调用then方法，将想要在Promise异步操作成功时执行的回调放入callbacks队列，其实也就是注册回调函数。
-   ② Resolve: 创建Promise实例时传入的函数会被赋予一个函数类型的参数，即resolve，它接收一个参数value，代表异步操作返回的结果，当一步操作执行成功后，用户会调用resolve方法，这时候其实真正执行的操作是将callbacks队列中的回调一一执行；
-   ③ Reject同Resolve
-
-4. 代码
-```
 // 把几个初始态定义为常量
 const PENDING = 'pending';
 const FULFILLED = 'fulfilled';
@@ -101,6 +69,3 @@ Promise.prototype.then = function (onFulfilled, onRejected) {
 };
 
 module.exports = Promise;
-```
-
-4. 待完善：then的链式调用及Promise.all，Promise.race等方法
