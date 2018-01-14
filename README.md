@@ -103,4 +103,4 @@ Promise.prototype.then = function (onFulfilled, onRejected) {
 module.exports = Promise;
 ```
 
-4. 待完善：then的链式调用及Promise.all，Promise.race等方法
+5. 待完善：then的链式调用及Promise.all，Promise.race等方法
