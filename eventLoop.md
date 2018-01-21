@@ -10,8 +10,7 @@
 
 主线程从"任务队列"中读取事件，这个过程是循环不断的，所以整个的这种运行机制又称为Event Loop（事件循环）
 	
-![Alt text](./bg2014100802.png)
-
+![bg2014100802.png](http://upload-images.jianshu.io/upload_images/2216842-68e971538f33a5ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 3. 任务队列分类
@@ -56,6 +55,6 @@ process.nextTick(function() {
 // 1
 ```
 
-Macrotask 全部存放于 Macro Task Queue 中。而 Micro Task 被分到了两个队列中.。
-Micro Task Queue 存放 Promise 等 microtask.，而 Tick Task Queue 专门用于存放 process.nextTick 的任务.
+Macrotask 全部存放于 Macro Task Queue 中,而 Micro Task 被分到了两个队列中。
+Micro Task Queue 存放 Promise 等 microtask，而 Tick Task Queue 专门用于存放 process.nextTick 的任务.
 每个 Macro Task 结束后, 都要清空所有的 Micro Task。 引擎会遍历 Macro Task Queue, 对于每个 Macrotask 执行完毕后都要遍历执行 Tick Task Queue 的所有任务, 紧接着再遍历 Micro Task Queue 的所有任务。(这也解释了为什么 nextTick 会优于 Promise 执行)
