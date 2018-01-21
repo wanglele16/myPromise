@@ -21,10 +21,10 @@
 	 * setInterval
 	
 - Microtask 微任务包括
-		* process.nextTick
-		* Promise
-		* Object.observe
-		* MutaionObserver
+	* process.nextTick
+	* Promise
+	* Object.observe
+	* MutaionObserver
 		
 宏观上讲, Macrotask 会进入 Macro Task Queue, Microtask 会进入 Micro Task Queue。
 但从微观实现的角度讲, 引擎都会有三个 Task Queue:
