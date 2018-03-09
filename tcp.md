@@ -1,6 +1,8 @@
 ### 了解 tcp/ip 协议
 1. OSI 7层模型
+
 ![image.png](https://upload-images.jianshu.io/upload_images/2216842-9e1dd41282ed0c4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 不同主机之间要进行通信，需要遵循共同的协议。这些协议非常复杂，一般我们把它抽象成7层，叫做OSI（open system interconnection） 7层模型。
 从底向上依次是：
 	* 物理层：定义传输设备的电压与信号等，连接数据帧转换成比特流的编码方式，最后连接实际传输介质发送/接收比特信号
@@ -30,6 +32,7 @@
 TCP为可靠的、面向连接的协议，但传输效率低；UDP为用户数据报协议，是不可靠的、无连接的服务，传输效率高，应用于QQ、视频软件、TFTP 简单文件传输协议(短信）
 
 3. TCP3次握手和4次断开
+
 ![image.png](https://upload-images.jianshu.io/upload_images/2216842-df9f36217598da3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 TCP是面向连接的协议，它在源点和终点之间建立虚拟连接，而不是物理连接。
